@@ -9,33 +9,28 @@
         
         img {
             float: left;
-            vertical-align: middle;
-            border-radius: 8px;
             width: 200px;
+            vertical-align: middle;
             height: auto;
-            margin: 16px;
-        }
-        
-        section {
-            display: block;
-        }
-        
-        h1 {
-            margin-top: 20px;
-            line-height: 5px;
-        }
-        
-        #row {
-            vertical-align: center;
+            margin: 12px;
+            border-radius: 6px;
         }
         
         #header-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*height: 64px;
+            margin: 16px;*/
+        }
+
+        #text-container {
+            background-color: white;
             display: flex;
             flex-direction: row;
-            justify-content: flex-start;
             align-items: center;
-            height: 64px;
-            margin: 16px;
+            justify-content: center;
         }
         
         #body-container {
