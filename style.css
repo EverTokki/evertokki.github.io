@@ -48,4 +48,6 @@
         a:hover {
             text-decoration: underline;
             text-decoration-color: white;
+            text-decoration-thickness: 3px;
+            color: white;
         }
