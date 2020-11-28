@@ -1,11 +1,13 @@
+
         body {
-            overflow: hidden;
             background-image: url("images/background.jpg");
             background-size: contain;
             background-repeat: no-repeat;
-            background-position: center center;
+            background-position: center;
+            background-origin: content-box;
+            overflow: hidden;
             font-family: 'Lato', sans-serif;
-            margin: 16px;
+            margin: 0;
             width: 100%;
             height: 100%;
             color: white;   
@@ -22,19 +24,14 @@
         #body-container {
             width: 100%;
             height: 100%;
-            margin: 14px 30px;
+            margin: 28px 30px;
             display: flex;
-            align-items: left;
-            float: left;
+            flex-direction: column;
         }
-
-        #text-container {
-            margin: 24px 14px;
-        }
-
+        
         #footer-container {
-           display: flex;
-           margin-top: 20px;
+           display: inline-block;
+           margin-top: 14px;
         }
 
         #footer-container a {
@@ -56,6 +53,8 @@
 
         .navbar {
             overflow: hidden;
+            padding: 0px 28px;
+            background-color: white;
         }
         
         .navbar a {
@@ -65,23 +64,20 @@
             text-decoration: none;
             font-size: 18px;
             line-height: 25px;
-            border-radius: 4px;
-            margin-right: 14px;
+            /* border-radius: 4px; */
+            margin-right: 28px;
         }
         
-        /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
         .navbar a.home {
             font-size: 25px;
             font-weight: bold;
         }
         
-        /* Change the background color on mouse-over */
         .navbar a:hover {
             background-color: #ddd;
             color: black;
         }
         
-        /* Style the active/current link*/
         .navbar a.active {
             background-color: rgb(37, 102, 168);
             color: white;
@@ -91,7 +87,6 @@
             margin: 14px;
         }
         
-        /* Float the link section to the right */
         .navbar-right {
             float: right;
         }
