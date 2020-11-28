@@ -1,6 +1,6 @@
         body {
             overflow: hidden;
-            background-image: url("images/background-min.jpg");
+            background-image: url("images/background.jpg");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
@@ -8,8 +8,7 @@
             margin: 16px;
             width: 100%;
             height: 100%;
-            /* background: #d4dfff; */
-            color: white;
+            color: white;   
         }
         
         /* profile pic*/
@@ -23,16 +22,18 @@
         #body-container {
             width: 100%;
             height: 100%;
-            margin: 20px 30px;
+            margin: 14px 30px;
             display: flex;
+            align-items: left;
+            float: left;
         }
 
         #text-container {
-            margin: 24px;
+            margin: 24px 14px;
         }
 
         #footer-container {
-           display: flex-wrap;
+           display: flex;
            margin-top: 20px;
         }
 
@@ -84,6 +85,10 @@
         .navbar a.active {
             background-color: rgb(37, 102, 168);
             color: white;
+        }
+
+        .home {
+            margin: 14px;
         }
         
         /* Float the link section to the right */
