@@ -5,6 +5,9 @@
             background-repeat: no-repeat;
             background-position: center;
             background-origin: content-box;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
             overflow: hidden;
             font-family: 'Lato', sans-serif;
             margin: 0;
