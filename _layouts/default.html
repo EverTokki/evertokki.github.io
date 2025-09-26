@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Jekyll feed -->
+    {% feed_meta %}
+    
+    <!-- Your main CSS (includes fonts) -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
+
+    <header>
+        <h1><a href="{{ '/' | relative_url }}">{{ site.title | split: ' - ' | first }}</a></h1>
+        <p class="subtitle">
+            <span class="focus-text" id="focusText">Software Engineer</span>
+        </p>
+        
+        <nav>
+            <button class="tab-btn {% if page.url == '/' %}active{% endif %}" data-tab="about">About</button>
+            <button class="tab-btn {% if page.url contains '/blog' %}active{% endif %}" data-tab="blog">Blog</button>
+            <button class="tab-btn" data-tab="photography">Photography</button>
+            <button class="tab-btn" data-tab="projects">Projects</button>
+            <button class="tab-btn" data-tab="contact">Contact</button>
+        </nav>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Lightbox for photos -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <div class="lightbox-image" id="lightboxImage">Full Size Photo</div>
+            <div class="lightbox-info">
+                <div class="lightbox-title" id="lightboxTitle">Photo Title</div>
+                <div class="lightbox-specs" id="lightboxSpecs">Camera specs here</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Your JavaScript -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

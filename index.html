@@ -1,50 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Home
+---
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Chanbin Lee</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-
-</head>
-
-<div class="navbar">
-    <a class="home" href="#home">evertokki</a>
-    <!-- <div class="navbar-right">
-        <a class="link" href="#about">About</a>
-        <a class="link" href="#projects">Projects</a>
-        <a class="link" href="#contact">Contact</a>
-    </div> -->
-</div>
-
-<body>
-    <div id="body-container">
-        <div id="text-container">
-            <img src="images/cb.jpeg">
-
-            <h1>Chanbin Lee</h1>
-            <h3>Softwaer Development Engineer, Amazon</h3>
-            <p> I majored in Cognitive Systems, Psychology at UBC. <br>
-            <p> In my free time, I like to make things🛠, take pictures📸, and type on my mechanical keyboard⌨.<br>
-                If you haven't noticed, frontend is not my thing.
-
-                <br><br>🏡 Vancouver, BC, Canada</p>
+<!-- About Tab -->
+<section id="about" class="tab-content active">
+    <div class="about-content">
+        <div class="about-hero">
+            <div class="about-photo">
+                <img src="/images/profile-photo.jpg" alt="Your Name - Profile Photo">
+            </div>
+            <div class="about-intro">
+                <h2>Hi, I'm [Your Name]</h2>
+                <p class="intro-text">Software Engineer at Amazon who finds precision and peace behind the camera.</p>
+            </div>
         </div>
-        <div id="footer-container">
-            <a class="link" href="https://m.me/evertokki" target="_blank">Facebook</a>
-            <a class="link" href="https://twitter.com/evertokki" target="_blank">Twitter</a>
-            <a class="link" href="https://github.com/evertokki" target="_blank">Github</a>
-            <a class="link" href="https://www.linkedin.com/in/chanbinlee/" target="_blank">LinkedIn</a>
-            <a class="link" href="/images/assets/CBLee_Resume.pdf" target="_blank">Resume</a>
-        </div>
-        <script src="./index.js"></script>
+        
+        <p>My technical background deeply influences my photographic approach—I believe in the meticulous craft of capturing light, whether it's planning astrophotography shots around moon phases or waiting hours for the perfect wildlife moment.</p>
+        
+        <p>My photography focuses on landscapes, wildlife, and astrophotography. I'm drawn to images that require patience, planning, and technical precision rather than spontaneous captures. Each shot represents a deliberate decision and often hours of preparation and waiting.</p>
+        
+        <h3>Technical Approach</h3>
+        <p>I prefer "working" for a shot rather than casual photography. This means studying weather patterns for landscape work, understanding animal behavior for wildlife photography, and using apps like PhotoPills to plan the exact position of the Milky Way. The intersection of technical knowledge and artistic vision is where I find the most satisfaction.</p>
+        
+        <h3>Beyond Photography</h3>
+        <p>When I'm not coding or out with my camera, I enjoy various crafts and am planning to dive into digital creative projects that blend my technical and artistic interests. I'm particularly excited about exploring the intersection of code and visual art.</p>
+        
+        <p>This website serves as both a portfolio of my work and a place for me to share thoughts on photography, technology, and the creative process.</p>
     </div>
-    </p>
-</body>
+</section>
 
-</html>
+<!-- Blog Tab -->
+<section id="blog" class="tab-content">
+    <div class="blog-posts">
+        {% if site.posts.size > 0 %}
+            {% for post in site.posts limit:3 %}
+                <article class="blog-post">
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <div class="blog-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                    <p>{% if post.excerpt %}{{ post.excerpt | strip_html }}{% else %}{{ post.content | strip_html | truncatewords: 30 }}{% endif %}</p>
+                    <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+                </article>
+            {% endfor %}
+            
+            {% if site.posts.size > 3 %}
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="{{ '/blog' | relative_url }}" class="btn-back">View All Posts →</a>
+                </div>
+            {% endif %}
+        {% else %}
+            <article class="blog-post">
+                <h3>Coming Soon!</h3>
+                <div class="blog-date">Stay tuned</div>
+                <p>I'm working on some great content about photography techniques, coding projects, and the intersection of technology and creativity. Check back soon!</p>
+            </article>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Photography Tab -->
+<section id="photography" class="tab-content">
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all" data-section="photography">All</button>
+        <button class="filter-btn" data-filter="landscapes" data-section="photography">Landscapes</button>
+        <button class="filter-btn" data-filter="animals" data-section="photography">Animals</button>
+        <button class="filter-btn" data-filter="astro" data-section="photography">Astrophotography</button>
+    </div>
+
+    <div class="photo-masonry">
+        <div class="photo-item" data-category="landscapes" onclick="openLightbox(this)">
+            <div class="photo-placeholder photo-landscapes photo-medium">Mountain Landscape</div>
+            <div class="photo-overlay">
+                <div class="photo-title">Golden Hour Ridge</div>
+                <div class="photo-specs">Canon R5 • 24-70mm • f/8 • 1/125s • ISO 100</div>
+            </div>
+        </div>
+
+        <div class="photo-item" data-category="astro" onclick="openLightbox(this)">
+            <div class="photo-placeholder photo-astro photo-large">Milky Way Panorama</div>
+            <div class="photo-overlay">
+                <div class="photo-title">Desert Milky Way</div>
+                <div class="photo-specs">Sony A7IV • 24mm • f/2.8 • 20s • ISO 3200</div>
+            </div>
+        </div>
+
+        <div class="photo-item" data-category="animals" onclick="openLightbox(this)">
+            <div class="photo-placeholder photo-animals photo-small">Red Fox</div>
+            <div class="photo-overlay">
+                <div class="photo-title">Patient Hunter</div>
+                <div class="photo-specs">Canon R6 • 100-400mm • f/5.6 • 1/500s • ISO 800</div>
+            </div>
+        </div>
+
+        <div class="photo-item" data-category="landscapes" onclick="openLightbox(this)">
+            <div class="photo-placeholder photo-landscapes photo-small">Seascape</div>
+            <div class="photo-overlay">
+                <div class="photo-title">Tidal Patterns</div>
+                <div class="photo-specs">Fuji XT-4 • 16-55mm • f/11 • 30s • ISO 64 + ND filter</div>
+            </div>
+        </div>
+
+        <div class="photo-item" data-category="astro" onclick="openLightbox(this)">
+            <div class="photo-placeholder photo-astro photo-medium">Star Trails</div>
+            <div class="photo-overlay">
+                <div class="photo-title">Circumpolar Trails</div>
+                <div class="photo-specs">Canon 5D IV • 14mm • f/2.8 • 240s • ISO 400</div>
+            </div>
+        </div>
+
+        <div class="photo-item" data-category="animals" onclick="openLightbox(this)">
+            <div class="photo-placeholder photo-animals photo-large">Great Blue Heron</div>
+            <div class="photo-overlay">
+                <div class="photo-title">Dawn Fisherman</div>
+                <div class="photo-specs">Nikon D850 • 600mm • f/6.3 • 1/1000s • ISO 1600</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Tab -->
+<section id="projects" class="tab-content">
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all" data-section="projects">All</button>
+        <button class="filter-btn" data-filter="web" data-section="projects">Web</button>
+        <button class="filter-btn" data-filter="mobile" data-section="projects">Mobile</button>
+        <button class="filter-btn" data-filter="tools" data-section="projects">Tools</button>
+    </div>
+
+    <div class="projects-grid">
+        <a href="{{ '/blog/portfolio-website' | relative_url }}" class="project-card" data-category="web">
+            <div class="project-status status-completed">Completed</div>
+            <div class="card-image project-web">Portfolio Website<br><small>Screenshot here</small></div>
+            <div class="card-content">
+                <div class="card-title">Personal Portfolio</div>
+                <div class="card-description">Custom-built website showcasing photography and projects. Features dark mode, smooth animations, and responsive design.</div>
+                <div class="project-tech">
+                    <span class="tech-icon tech-html">HTML/CSS</span>
+                    <span class="tech-icon tech-javascript">JavaScript</span>
+                    <span class="tech-icon tech-css">Responsive</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="{{ '/blog/astro-planning-tool' | relative_url }}" class="project-card" data-category="tools">
+            <div class="project-status status-progress">In Progress</div>
+            <div class="card-image project-tool">Photography Tool<br><small>App interface here</small></div>
+            <div class="card-content">
+                <div class="card-title">Astro Planning Assistant</div>
+                <div class="card-description">Web app to calculate optimal astrophotography settings based on location, moon phase, and weather conditions.</div>
+                <div class="project-tech">
+                    <span class="tech-icon tech-react">React</span>
+                    <span class="tech-icon tech-api">Weather API</span>
+                    <span class="tech-icon tech-javascript">Astronomy.js</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="{{ '/blog/photo-location-tracker' | relative_url }}" class="project-card" data-category="mobile">
+            <div class="project-status status-planning">Planning</div>
+            <div class="card-image project-mobile">Mobile App<br><small>App screenshots here</small></div>
+            <div class="card-content">
+                <div class="card-title">Photo Location Tracker</div>
+                <div class="card-description">React Native app for logging photography locations with GPS coordinates, weather conditions, and shot notes.</div>
+                <div class="project-tech">
+                    <span class="tech-icon tech-native">React Native</span>
+                    <span class="tech-icon tech-api">GPS</span>
+                    <span class="tech-icon tech-db">SQLite</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Contact Tab -->
+<section id="contact" class="tab-content">
+    <div class="contact-content">
+        <p>I'm always interested in connecting with fellow photographers, engineers, or anyone passionate about the intersection of technology and creativity.</p>
+        
+        <div class="contact-links">
+            <a href="mailto:your.email@example.com" class="contact-link">
+                📧 Email
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" class="contact-link">
+                💼 LinkedIn
+            </a>
+            <a href="https://github.com/yourusername" class="contact-link">
+                💻 GitHub
+            </a>
+            <a href="https://instagram.com/yourhandle" class="contact-link">
+                📸 Instagram
+            </a>
+        </div>
+        
+        <p>Feel free to reach out if you want to discuss photography techniques, collaborate on a project, or just chat about the technical side of creative work!</p>
+    </div>
+</section>
