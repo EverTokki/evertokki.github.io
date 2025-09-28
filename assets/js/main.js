@@ -99,35 +99,6 @@ if (document.querySelector('.tab-btn')) {
         });
     });
 
-    // Loading skeleton simulation for photos (only on first visit to photography tab)
-    let photographyTabVisited = false;
-    
-    function simulatePhotoLoading() {
-        if (photographyTabVisited) return; // Only do this once
-        
-        const photoItems = document.querySelectorAll('.photo-item');
-        photoItems.forEach((item, index) => {
-            // Add loading state
-            item.classList.add('loading');
-            
-            // Remove loading state after random delay (simulate real loading)
-            setTimeout(() => {
-                item.classList.remove('loading');
-            }, 300 + (index * 150)); // Staggered loading, made faster
-        });
-        
-        photographyTabVisited = true;
-    }
-    
-    // Simulate loading when switching to photography tab for first time
-    const photographyTabBtn = document.querySelector('[data-tab="photography"]');
-    if (photographyTabBtn) {
-        photographyTabBtn.addEventListener('click', () => {
-            setTimeout(simulatePhotoLoading, 100);
-        });
-    }
-}
-
 // Lightbox functionality
 function openLightbox(photoElement) {
     const lightbox = document.getElementById('lightbox');
