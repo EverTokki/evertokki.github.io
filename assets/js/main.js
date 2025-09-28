@@ -107,26 +107,49 @@ function openLightbox(photoElement) {
     const lightboxSpecs = document.getElementById('lightboxSpecs');
     const lightboxLocation = document.getElementById('lightboxLocation');
     
+    if (!lightbox) {
+        console.error('Lightbox element not found!');
+        return;
+    }
+    
     const overlay = photoElement.querySelector('.photo-overlay');
-    const title = overlay.querySelector('.photo-title').textContent;
-    const specs = overlay.querySelector('.photo-specs').textContent;
-    const location = overlay.querySelector('.photo-location') ? overlay.querySelector('.photo-location').textContent : '';
+    if (!overlay) {
+        console.error('Photo overlay not found!');
+        return;
+    }
     
-    // Get the actual image source
+    const title = overlay.querySelector('.photo-title')?.textContent || 'Photo';
+    const specs = overlay.querySelector('.photo-specs')?.textContent || '';
+    const location = overlay.querySelector('.photo-location')?.textContent || '';
+    
+    // Check if it's a real image or placeholder
     const thumbnailImg = photoElement.querySelector('img');
-    const imageSrc = thumbnailImg.src;
+    const placeholder = photoElement.querySelector('.photo-placeholder');
     
-    // Clear the lightbox image and create a new img element
+    // Clear the lightbox image
     lightboxImage.innerHTML = '';
-    const fullImg = document.createElement('img');
-    fullImg.src = imageSrc;
-    fullImg.alt = title;
-    fullImg.style.width = '100%';
-    fullImg.style.height = '100%';
-    fullImg.style.objectFit = 'contain';
-    fullImg.style.borderRadius = '8px';
+    lightboxImage.className = 'lightbox-image';
     
-    lightboxImage.appendChild(fullImg);
+    if (thumbnailImg) {
+        // Real image - create img element
+        const fullImg = document.createElement('img');
+        fullImg.src = thumbnailImg.src;
+        fullImg.alt = title;
+        fullImg.style.width = '100%';
+        fullImg.style.height = '100%';
+        fullImg.style.objectFit = 'contain';
+        fullImg.style.borderRadius = '8px';
+        lightboxImage.appendChild(fullImg);
+    } else if (placeholder) {
+        // Placeholder - copy the gradient background
+        lightboxImage.className = placeholder.className.replace('photo-placeholder', 'lightbox-image');
+        lightboxImage.textContent = placeholder.textContent;
+    } else {
+        // Fallback
+        lightboxImage.style.background = 'var(--card-dark)';
+        lightboxImage.textContent = 'Image not found';
+    }
+    
     lightboxTitle.textContent = title;
     lightboxSpecs.textContent = specs;
     lightboxLocation.textContent = location;
