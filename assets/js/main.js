@@ -1,5 +1,5 @@
 // Focus text animation
-const focusTexts = ['Software Engineer', 'Photographer', 'Creative'];
+const focusTexts = ['Software Engineer', 'Hobbyist Photographer', 'Arts & Crafts'];
 let currentFocusIndex = 0;
 
 const focusElement = document.getElementById('focusText');
