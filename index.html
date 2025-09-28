@@ -8,23 +8,20 @@ title: Home
     <div class="about-content">
         <div class="about-hero">
             <div class="about-photo">
-                <img src="/images/profile-photo.jpg" alt="Your Name - Profile Photo">
+                <img src="/images/profile-photo.jpg">
             </div>
             <div class="about-intro">
-                <h2>Hi, I'm [Your Name]</h2>
-                <p class="intro-text">Software Engineer at Amazon who finds precision and peace behind the camera.</p>
+                <h2>Hi, I'm Chanbin.</h2>
+                <p class="intro-text">Software Engineer at Amazon who finds peace behind the camera.</p>
             </div>
         </div>
         
-        <p>My technical background deeply influences my photographic approach—I believe in the meticulous craft of capturing light, whether it's planning astrophotography shots around moon phases or waiting hours for the perfect wildlife moment.</p>
+        <p>My technical background deeply influences my photographic approach — I believe in the patience involved in capturing light, whether it's planning astrophotography shots around moon phases or waiting for the perfect wildlife moment.</p>
         
-        <p>My photography focuses on landscapes, wildlife, and astrophotography. I'm drawn to images that require patience, planning, and technical precision rather than spontaneous captures. Each shot represents a deliberate decision and often hours of preparation and waiting.</p>
-        
-        <h3>Technical Approach</h3>
-        <p>I prefer "working" for a shot rather than casual photography. This means studying weather patterns for landscape work, understanding animal behavior for wildlife photography, and using apps like PhotoPills to plan the exact position of the Milky Way. The intersection of technical knowledge and artistic vision is where I find the most satisfaction.</p>
+        <p>My photography focuses on landscapes, wildlife, and astrophotography. I'm drawn to images that require time, planning, and technical precision rather than spontaneous captures, although I'm trying out my hand in all areas of photography.</p>
         
         <h3>Beyond Photography</h3>
-        <p>When I'm not coding or out with my camera, I enjoy various crafts and am planning to dive into digital creative projects that blend my technical and artistic interests. I'm particularly excited about exploring the intersection of code and visual art.</p>
+        <p>When I'm not coding or out with my camera, I enjoy arts and crafts and I'm planning to dive into digital creative projects that blend my technical and artistic interests. I'm particularly excited about exploring the intersection of code and visual art.</p>
         
         <p>This website serves as both a portfolio of my work and a place for me to share thoughts on photography, technology, and the creative process.</p>
     </div>
@@ -52,7 +49,7 @@ title: Home
             <article class="blog-post">
                 <h3>Coming Soon!</h3>
                 <div class="blog-date">Stay tuned</div>
-                <p>I'm working on some great content about photography techniques, coding projects, and the intersection of technology and creativity. Check back soon!</p>
+                <p>I'm working on content about photography techniques, coding projects, and the intersection of technology and creativity. Check back soon!</p>
             </article>
         {% endif %}
     </div>
@@ -68,55 +65,62 @@ title: Home
     </div>
 
     <div class="photo-masonry">
-        <div class="photo-item" data-category="landscapes" onclick="openLightbox(this)">
-            <div class="photo-placeholder photo-landscapes photo-medium">Mountain Landscape</div>
+        <div class="photo-item" data-category="animals" onclick="openLightbox(this)">
+            <img src="/images/photography/cat.jpg" class="photo-image photo-medium">
             <div class="photo-overlay">
-                <div class="photo-title">Golden Hour Ridge</div>
-                <div class="photo-specs">Canon R5 • 24-70mm • f/8 • 1/125s • ISO 100</div>
-            </div>
-        </div>
-
-        <div class="photo-item" data-category="astro" onclick="openLightbox(this)">
-            <div class="photo-placeholder photo-astro photo-large">Milky Way Panorama</div>
-            <div class="photo-overlay">
-                <div class="photo-title">Desert Milky Way</div>
-                <div class="photo-specs">Sony A7IV • 24mm • f/2.8 • 20s • ISO 3200</div>
+                <div class="photo-title">Tabby Kitten</div>
+                <div class="photo-specs">Fujifilm X-T5 • 70-300mm • f/5.6 • 1/950s • ISO 500</div>
+                <div class="photo-location"></div>Lake Tekapo, New Zealand</div>
             </div>
         </div>
 
         <div class="photo-item" data-category="animals" onclick="openLightbox(this)">
-            <div class="photo-placeholder photo-animals photo-small">Red Fox</div>
+            <img src="/images/photography/dog.jpg" class="photo-image photo-medium">
             <div class="photo-overlay">
-                <div class="photo-title">Patient Hunter</div>
-                <div class="photo-specs">Canon R6 • 100-400mm • f/5.6 • 1/500s • ISO 800</div>
-            </div>
-        </div>
-
-        <div class="photo-item" data-category="landscapes" onclick="openLightbox(this)">
-            <div class="photo-placeholder photo-landscapes photo-small">Seascape</div>
-            <div class="photo-overlay">
-                <div class="photo-title">Tidal Patterns</div>
-                <div class="photo-specs">Fuji XT-4 • 16-55mm • f/11 • 30s • ISO 64 + ND filter</div>
+                <div class="photo-title">Farm Dog</div>
+                <div class="photo-specs">Fujifilm X-T5 • 35mm • f/1.4 • 1/50s • ISO 1000</div>
+                <div class="photo-location"></div>Queenstown, New Zealand</div>
             </div>
         </div>
 
         <div class="photo-item" data-category="astro" onclick="openLightbox(this)">
-            <div class="photo-placeholder photo-astro photo-medium">Star Trails</div>
+            <img src="/images/photography/milky-way.jpg" class="photo-image photo-medium">
             <div class="photo-overlay">
-                <div class="photo-title">Circumpolar Trails</div>
-                <div class="photo-specs">Canon 5D IV • 14mm • f/2.8 • 240s • ISO 400</div>
+                <div class="photo-title">Milky Way</div>
+                <div class="photo-specs">Fujifilm X-T5 • 16mm • f/1.4 • 10s • ISO 1600</div>
+                <div class="photo-location"></div>Tekapo Dark Sky Reserve, New Zealand</div>
             </div>
         </div>
 
-        <div class="photo-item" data-category="animals" onclick="openLightbox(this)">
-            <div class="photo-placeholder photo-animals photo-large">Great Blue Heron</div>
+        <div class="photo-item" data-category="landscapes" onclick="openLightbox(this)">
+            <img src="/images/photography/the-tree.jpg" class="photo-image photo-medium">
             <div class="photo-overlay">
-                <div class="photo-title">Dawn Fisherman</div>
-                <div class="photo-specs">Nikon D850 • 600mm • f/6.3 • 1/1000s • ISO 1600</div>
+                <div class="photo-title">The Tree</div>
+                <div class="photo-specs">Fuji X-T5 • 16mm • f/5.6 • 1/1250s • ISO 500</div>
+                <div class="photo-location"></div>Lake Tekapo, New Zealand</div>
+            </div>
+        </div>
+
+        <div class="photo-item" data-category="planespotting" onclick="openLightbox(this)">
+            <img src="/images/photography/planespotting1.jpg" class="photo-image photo-medium">
+            <div class="photo-overlay">
+                <div class="photo-title">The Tree</div>
+                <div class="photo-specs">Fuji X-T30 • 420mm • f/8 • 1/2000s • ISO 1000</div>
+                <div class="photo-location"></div>Richmond BC, Canada</div>
+            </div>
+        </div>
+
+        <div class="photo-item" data-category="planespotting" onclick="openLightbox(this)">
+            <img src="/images/photography/planespotting2.jpg" class="photo-image photo-medium">
+            <div class="photo-overlay">
+                <div class="photo-title">The Tree</div>
+                <div class="photo-specs">Fuji X-T30 • 420mm • f/8 • 1/2000s • ISO 1600</div>
+                <div class="photo-location"></div>Richmond BC, Canada</div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Projects Tab -->
 <section id="projects" class="tab-content">
@@ -169,6 +173,146 @@ title: Home
                 </div>
             </div>
         </a>
+    </div>
+</section>
+
+<!-- Resume Tab -->
+<section id="resume" class="tab-content">
+    <div class="resume-content">
+        <div class="resume-header">
+            <h1>Resume</h1>
+            <div class="resume-download">
+                <a href="/assets/resume.pdf" class="download-btn" target="_blank">
+                    📄 Download PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <h3>Software Engineer</h3>
+                    <div class="job-meta">
+                        <span class="company">Amazon</span>
+                        <span class="duration">2022 - Present</span>
+                    </div>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Developed and maintained high-scale distributed systems serving millions of users</li>
+                        <li>Collaborated with cross-functional teams to deliver customer-facing features</li>
+                        <li>Optimized system performance resulting in 40% reduction in latency</li>
+                        <li>Mentored junior engineers and led technical design reviews</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>Software Developer Intern</h3>
+                    <div class="job-meta">
+                        <span class="company">Previous Company</span>
+                        <span class="duration">Summer 2021</span>
+                    </div>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Built web applications using React and Node.js</li>
+                        <li>Implemented automated testing frameworks improving code coverage by 60%</li>
+                        <li>Collaborated with product managers to translate requirements into technical solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Education</h2>
+            
+            <div class="education">
+                <div class="education-header">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <div class="education-meta">
+                        <span class="school">Your University</span>
+                        <span class="duration">2018 - 2022</span>
+                    </div>
+                </div>
+                <div class="education-details">
+                    <p>Relevant Coursework: Data Structures, Algorithms, Software Engineering, Database Systems</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">TypeScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Frameworks</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">Next.js</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Tools & Technologies</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Photography</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Lightroom</span>
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">Capture One</span>
+                        <span class="skill-tag">Astrophotography</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Projects</h2>
+            
+            <div class="project">
+                <h3>Astrophotography Planning Tool</h3>
+                <p>React-based web application that combines weather API data, astronomical calculations, and location scouting to optimize astrophotography sessions. Features real-time weather monitoring and moon phase tracking.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Weather API</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Personal Portfolio Website</h3>
+                <p>Custom-built Jekyll site with advanced CSS animations, responsive design, and integrated blog functionality. Features dynamic background effects and smooth user interactions.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Jekyll</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

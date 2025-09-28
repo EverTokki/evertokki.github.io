@@ -67,7 +67,7 @@ if (localStorage.getItem('darkMode') === 'true') {
 // Enhanced tab switching with directional animations (for homepage)
 if (document.querySelector('.tab-btn')) {
     let previousTabIndex = 0;
-    const tabOrder = ['about', 'blog', 'photography', 'projects', 'contact'];
+    const tabOrder = ['about', 'blog', 'photography', 'projects', 'resume', 'contact'];
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     
@@ -139,7 +139,7 @@ function openLightbox(photoElement) {
     const title = overlay.querySelector('.photo-title').textContent;
     const specs = overlay.querySelector('.photo-specs').textContent;
     const imagePlaceholder = photoElement.querySelector('.photo-placeholder');
-    
+    X
     // Copy the gradient background
     lightboxImage.className = imagePlaceholder.className.replace('photo-placeholder', 'lightbox-image');
     lightboxImage.textContent = imagePlaceholder.textContent;

@@ -1,9 +1,9 @@
 # Site settings
-title: "Your Name - Software Engineer & Photographer"
-email: your.email@example.com
-description: "Personal website showcasing photography and coding projects"
+title: "Chanbin Lee - Software Engineer & Photographer"
+email: 0415cbl@gmail.com
+description: "Personal website"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yourusername.github.io" # Replace with your GitHub username
+url: "https://evertokki.github.io" # Replace with your GitHub username
 
 # Build settings
 markdown: kramdown
@@ -40,5 +40,5 @@ defaults:
 
 # Site author
 author:
-  name: Your Name
-  email: your.email@example.com
+  name: Chanbin Lee
+  email: 0415cbl@gmail.com
