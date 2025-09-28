@@ -758,6 +758,27 @@ body.dark .card-description {
     opacity: 0;
 }
 
+.photo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Images should use natural aspect ratios */
+.photo-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: inline-block;  
+    width: 100%;           
+}
+
 .photo-item.loading .photo-overlay {
     display: none;
 }
