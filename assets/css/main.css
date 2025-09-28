@@ -760,25 +760,34 @@ body.dark .card-description {
 
 .photo-image {
     width: 100%;
-    height: auto;
     display: block;
     object-fit: cover;
 }
 
-/* Images should use natural aspect ratios */
-.photo-item {
-    break-inside: avoid;
-    margin-bottom: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    display: inline-block;  
-    width: 100%;           
+/* Standardized heights for better masonry balance */
+.photo-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
 }
 
+/* Size variants for balanced masonry */
+.photo-item.size-small img {
+    height: 280px;
+}
+
+.photo-item.size-medium img {
+    height: 380px;
+}
+
+.photo-item.size-large img {
+    height: 480px;
+}
+
+/* Default size if no class specified */
+.photo-item:not(.size-small):not(.size-medium):not(.size-large) img {
+    height: 350px;
+}
 .photo-item.loading .photo-overlay {
     display: none;
 }
