@@ -98,6 +98,7 @@ if (document.querySelector('.tab-btn')) {
             }
         });
     });
+} 
 
 // Lightbox functionality
 function openLightbox(photoElement) {
