@@ -525,15 +525,23 @@ body.dark .photo-item:hover {
 .lightbox-image {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: var(--card-dark);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
 }
 
+.lightbox-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
 .lightbox-close {
     position: absolute;
     top: -3rem;

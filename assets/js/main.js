@@ -105,17 +105,31 @@ function openLightbox(photoElement) {
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxTitle = document.getElementById('lightboxTitle');
     const lightboxSpecs = document.getElementById('lightboxSpecs');
+    const lightboxLocation = document.getElementById('lightboxLocation');
     
     const overlay = photoElement.querySelector('.photo-overlay');
     const title = overlay.querySelector('.photo-title').textContent;
     const specs = overlay.querySelector('.photo-specs').textContent;
-    const imagePlaceholder = photoElement.querySelector('.photo-placeholder');
-    X
-    // Copy the gradient background
-    lightboxImage.className = imagePlaceholder.className.replace('photo-placeholder', 'lightbox-image');
-    lightboxImage.textContent = imagePlaceholder.textContent;
+    const location = overlay.querySelector('.photo-location') ? overlay.querySelector('.photo-location').textContent : '';
+    
+    // Get the actual image source
+    const thumbnailImg = photoElement.querySelector('img');
+    const imageSrc = thumbnailImg.src;
+    
+    // Clear the lightbox image and create a new img element
+    lightboxImage.innerHTML = '';
+    const fullImg = document.createElement('img');
+    fullImg.src = imageSrc;
+    fullImg.alt = title;
+    fullImg.style.width = '100%';
+    fullImg.style.height = '100%';
+    fullImg.style.objectFit = 'contain';
+    fullImg.style.borderRadius = '8px';
+    
+    lightboxImage.appendChild(fullImg);
     lightboxTitle.textContent = title;
     lightboxSpecs.textContent = specs;
+    lightboxLocation.textContent = location;
     
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
