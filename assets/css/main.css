@@ -484,6 +484,24 @@ body.dark .photo-item:hover {
     transform: translateY(0);
 }
 
+.photo-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.photo-item.size-small img {
+    height: 250px;
+}
+
+.photo-item.size-medium img {
+    height: 350px;
+}
+
+.photo-item.size-large img {
+    height: 450px;
+}
+
 .photo-title {
     font-weight: 600;
     font-size: 1rem;
